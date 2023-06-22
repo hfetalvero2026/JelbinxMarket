@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelbinx Marketplace</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            scroll-padding-top: 2rem;
+            scroll-behavior: smooth;
+            box-sizing:border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        :root{
+            --main-color:#fd4646;
+            --text-color: #171427;
+            --bg-color: #fff;
+        }
+        #basti, #henrich, #juan{
+            width: 100%;
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+        }
+        body{
+            color: var(--text-color);
+            background-image: linear-gradient(#c2b29f, #c79964);
+        }
+        header{
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bg-color);
+            box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+            z-index: 100;
+        }
+        .nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        .logo{
+            font-size: 1.1rem;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+        #cart-icon{
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        section{
+            padding: 4rem 0 3rem;
+        }
+        .section-title{
+            font-size: 1.5rem;
+            font-weight:600;
+            text-align: center;
+        }
+        .shop{
+            margin-top: 2rem;
+        }
+        .shop-content{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,auto));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .product-box{
+            position: relative;
+        }
+        .product-box:hover{
+            padding: 10px;
+            border: 1px solid var(--text-color);
+            transition: 0.4s;
+        }
+        .product-img{
+            width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+        .product-title{
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+
+        }
+        .price{
+            font-weight: 500;
+        }
+        .add-cart{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--text-color);
+            color: var(--bg-color);
+            padding: 10px;
+            cursor: pointer;
+
+        }
+        .add-cart:hover{
+            background: hsl(249, 32%, 17%);
+        }
+        .navbar {
+        display:flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 5px solid #c79964;
+        background-color: #252525;
+        
+    }
+    nav {
+        flex:1 ;
+        text-align: right;
+
+    }
+    nav ul {
+        display: inline-block;
+        list-style-type: none;
+        padding: 4px 28px;
+    }
+    nav ul li {
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 30px;
+    }
+    a {
+        color: #d1d1d1;
+        text-decoration: none;
+        font-family: 'Public Sans', sans-serif;
+        padding: 20px 40px;
+        margin: 4px ;  
+       
+    }
+
+    a:hover {
+        color: white;
+        border-bottom: 2px solid #c79964;
+    }
+    #lbimg{
+        margin-left: 50px;
+        width: 300px
+    }
+    .ref{
+        font-size:8px;
+    }
+    
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src = "https://media.discordapp.net/attachments/1092639970705014804/1107282752304332830/JULARS.png" id ="lbimg" alt="">
+        </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">About us</a></li>
+        </ul>
+    </nav>
+</div>
+    <div class="container">
+        
+    
+    <section class="shop">
+        <h2 class="section-title">
+            Contributors
+        </h2>
+        <br>
+        <div class="shop-content">
+            <div class="product-box col-sm-12 mx-auto">
+                <img src="https://media.discordapp.net/attachments/882095196840525897/1089213364179312810/image.png?width=575&height=501" alt="basti" class="product-image" style="height: 381px;" id = "basti">
+                <br><br>
+                <h2 class="product-title">
+                    Gabriel Sebastian R. David
+                </h2>
+                <span class="price">
+                    Header Design<br>Shop Concept Planner
+                </span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+
+            <div class="product-box col-sm-12 mx-auto">
+                <img src="https://media.discordapp.net/attachments/882095196840525897/1107290926063292496/IMG_20230310_195317.jpg?width=576&height=587" alt="henrich" style="height: 381px;" class="product-image" id ="henrich"><br><br>
+                <h2 class="product-title">
+                    Henrich Xavier R. Fetalvero
+                </h2>
+                <span class="price">
+                    HTML-CSS Designer<br>Form Functionality Designer
+                </span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+
+            <div class="product-box col-sm-12 mx-auto">
+                <img src="https://media.discordapp.net/attachments/1092639970705014804/1107500611362107432/image.png?width=612&height=587" alt="juan" class="product-image" style="height: 381px;" id ="juan"><br><br>
+                <h2 class="product-title">
+                    Juan Alfonso V. Yumul
+                </h2>
+                <span class="price">
+                    JavaScript Coder<br>HTML Template Designer
+                </span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+        </div>
+
+            <div class="col-sm-8 mx-auto">
+        <h2 class="section-title mt-5">
+            Photo References
+        </h2>
+
+        <ul>
+            <li class="ref text-center">Air Jordan 1: https://www.highsnobiety.com/p/nike-air-jordan-1-football-cleat-buy-here/</li>
+            <li class="ref text-center">Nike Vapor Edge: https://www.amazon.com/Nike-Vapor-Football-Cleats-nkCZ2606/dp/B08L4CK4B2</li>
+            <li class="ref text-center">Under Armour Spotlight: https://www.kochsports.com/mens-ua-spotlight-mc-football-cleats-gold//</li>
+            <li class="ref text-center">Under Armour Blur Smoke: https://www.underarmour.com/en-us/p/football/mens_ua_blur_smoke_2.0_mc_football_cleats/3026330.html</li>
+            <li class="ref text-center">Nike BAPE: https://jkickscleats.com/products/bape-nike-football-cleats</li>
+            <li class="ref text-center">Adidas Adizero Wakanda: https://stadiumcustomkicks.com/products/wakanda-adidas-adizero-11-0-football-cleats</li>
+            <li class="ref text-center">Messi Jersey: https://arenajerseys.com/product/lionel-messi-argentina-22-23-authentic-home-jersey-by-adidas/</li>
+            <li class="ref text-center">Philippine Azkals Jersey: https://www.lazada.com.ph/products/kelme-philippine-national-team-jersey-the-azkals-year-2022-replicas-jersey-included-the-team-logo-and-flag-i2876190553.html</li>
+            <li class="ref text-center">Ronaldo Jersey: https://soccerwearhouse.com/products/adidas-mancheser-united-cristiano-ronaldo-away-jersey-w-europa-league-patches-22-23-white</li>
+            <li class="ref text-center">Ibrahimovic Jersey: https://arenajerseys.com/product/zlatan-ibrahimovic-ac-milan-21-22-home-jersey-by-puma/</li>
+            <li class="ref text-center">Pele Jersey: projerseyshop.net/productdetail/Men-s-Retro-1970-PEL-10-Brazil-Home-Soccer-Jersey-Shirt/208515</li>
+            <li class="ref text-center">Maradona Jersey: https://arenajerseys.com/product/diego-maradona-argentina-22-23-authentic-home-jersey-by-adidas/</li>
+            <li class="ref text-center">Puma Pants: https://us.puma.com/us/en/pd/individualfinal-training-mens-soccer-pants/657954?swatch=45</li>
+            <li class="ref text-center">Adidas Pants: https://www.adidas.com/us/tiro-pants/HY7585.html</li>
+            <li class="ref text-center">Nike Pants: https://www.macys.com/shop/product/nike-mens-academy-dri-fit-tapered-soccer-pants?ID=6685780</li>
+            <li class="ref text-center">Under Armour Pants: https://www.walmart.ca/en/ip/Under-Armour-Mens-Accelerate-Off-Pitch-Soccer-Pant/1K61P1WGCZSB</li>
+            <li class="ref text-center">Reebok Pants: https://reebok.ph/collections/men-clothing-pants</li>
+            <li class="ref text-center">Umbro Pants: https://www.umbro.co.uk/mens-trousers</li>
+            <li class="ref text-center">2022 World Cup Ball: https://www.amazon.com/adidas-H57791-Rihla-League/dp/B09D5QP3WR</li>
+            <li class="ref text-center">2018 World Cup Ball: https://www.popularmechanics.com/adventure/sports/g1369/a-brief-history-of-the-world-cup-soccer-ball/?slide=12</li>
+            <li class="ref text-center">2014 World Cup Ball: http://www.science4all.org/article/brazuca/</li>
+            <li class="ref text-center">2010 World Cup Ball: https://www.ebay.ph/itm/304824492550?hash=item46f8f4a206:g:YxYAAOSwi-JkAPiN</li>
+            <li class="ref text-center">2006 World Cup Ball: https://www.julienslive.com/lot-details/index/catalog/219/lot/92352</li>
+            <li class="ref text-center">2002 World Cup Ball: https://classicshirts.co.za/products/2002-fifa-world-cup-adidas-fevernova-official-match-ball</li>
+        </ul>
+    </div>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jelbinx</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@600&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+   <link href="https://fonts.cdnfonts.com/css/spaced" rel="stylesheet">
+                
+<style>
+  *{
+   font-family: 'Poppins', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition: all .2s linear;
+   text-transform: capitalize;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+body{
+   background: #eee;
+}
+
+.container{
+   max-width: 1200px;
+   margin: auto;
+   padding:3rem;
+}
+
+.container .title{
+   font-size: 3.5rem;
+   color:#444;
+   margin-bottom: 3rem;
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.container .products-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:2rem;
+}
+
+.container .products-container .product{
+   text-align: center;
+   padding:3rem 2rem;
+   background: #fff;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   outline: .1rem solid #ccc;
+   outline-offset: -1.5rem;
+   cursor: pointer;
+}
+
+.container .products-container .product:hover{
+   outline: .2rem solid #222;
+   outline-offset: 0;
+}
+
+.container .products-container .product:hover img{
+   transform: scale(.9);
+}
+
+.container .products-container .product h3{
+   padding:.5rem 0;
+   font-size: 2rem;
+   color:#444;
+}
+
+.container .products-container .product:hover h3{
+   color:#27ae60;
+}
+
+.container .products-container .product .price{
+   font-size: 2rem;
+   color:#444;
+}
+#cartt{
+  font-size: 50px;
+}
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+}
+@media (max-width:768px){
+
+   .products-preview .preview img{
+      height: 25rem;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+}
+table{
+    border-radius: 10px;
+    border: 1px solid rgb(171, 171, 171);
+    font-size: 3rem;
+    padding: 10px;
+    margin: auto;
+    width:65%;
+}
+
+#total-text{
+    text-align: center;
+}
+td{
+    text-align: center;
+    font-size:2rem;
+}
+.navbar {
+        display:flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 5px solid #c79964;
+        background-color: #252525;
+        
+    }
+    nav {
+        flex:1 ;
+        text-align: right;
+
+    }
+    nav ul {
+        display: inline-block;
+        list-style-type: none;
+        padding: 4px 28px;
+    }
+    nav ul li {
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 30px;
+    }
+    a {
+        color: #d1d1d1;
+        text-decoration: none;
+        font-family: 'Public Sans', sans-serif;
+        padding: 20px 40px;
+        margin: 4px ;  
+        font-size: 18px;
+    }
+
+    a:hover {
+        color: white;
+        border-bottom: 2px solid #c79964;
+    }
+    #lbimg{
+        margin-left: 50px;
+    }
+    .box{
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            color:white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+        }
+        .slider{
+        width: 800px;
+        height: 500px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .slides{
+        width: 500%;
+        height: 500px;
+        display: flex;
+    }
+    .slides input{
+        display: none;
+    }
+    .slide{
+        width: 20%;
+        transition: 2s;
+    }
+    .slide img{
+        width: 800px;
+        height: 500px;
+    }
+    .navigation-manual{
+        position: absolute;
+        width: 800px;
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+    }
+    .manual-btn{
+        border: 2px solid #000000;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+    }
+    .manual-btn:not(:last-child){
+        margin-right: 40px;
+    }
+    .manual-btn:hover{
+        background: #cccccc;
+    }
+    #radio1:checked~.first{
+        margin-left: 0;
+    }
+    #radio2:checked~.first{
+        margin-left: -20%;
+    }
+    #radio3:checked~.first{
+        margin-left: -40%;
+    }
+    .navigation-auto{
+        position: absolute;
+        display: flex;
+        width: 800px;
+        justify-content: center;
+        margin-top: 460px;
+    }
+    .navigation-auto div{
+        border: 2px solid yellow;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 0.5s;
+    }
+    .navigation-auto div:not(:last-child){
+        margin-right: 40px;
+    }
+    button{
+        font-size:12pt;
+        padding:5px;
+        border-radius: 10px;
+        background-color: #797878;
+        color:white;
+    }
+    button:hover{
+        color:#c79964;
+    }
+    .prodImg{
+        width:90%
+    }
+    footer{
+            font-family: 'Spaced', sans-serif;
+        }
+    #submitForm{
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+ 
+        <div class="navbar">
+            <div class="logo">
+                <img src = "https://media.discordapp.net/attachments/1092639970705014804/1107282752304332830/JULARS.png?width=1003&height=388" width="300" id ="lbimg" alt="">
+            </div>
+        <nav>
+            <ul>
+                <li id="home" ><a href="">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+            </ul>
+        </nav>
+    </div>
+        
+    <div class="container">
+        <h1>Football Cleats</h1>
+   <div class="products-container col-sm-12">
+
+    
+
+      <div class="product" data-name="p-1">
+         <img src="https://media.discordapp.net/attachments/882095196840525897/1108810504362799135/nike-air-jordan-1-football-cleat-buy-here-23.png?width=927&height=618" class="prodImg" alt="jordan">
+         <h3>Nike Air Jordan 1</h3>
+         <div class="price">Php 8100</div>
+         <button onclick="addToCart(0)">Add to cart</button>
+      </div>
+
+      <div class="product" data-name="p-2"><br><br><br><br>
+         <img src="https://media.discordapp.net/attachments/882095196840525897/1108810715055263855/61dVbPNmUrL.png?width=1401&height=615" class="prodImg" alt="">
+         <h3>Nike Vapor Edge</h3>
+         <div class="price">Php 3500</div>
+         <button onclick="addToCart(1)">Add to cart</button>
+      </div>
+
+      <div class="product" data-name="p-3">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108814224274235412/image.png?width=602&height=395" class="prodImg" alt="">
+         <h3>Under Armour Spotlight</h3>
+         <div class="price">Php 9999</div>
+         <button onclick="addToCart(2)">Add to cart</button>
+      </div>
+      <div class="product" data-name="p-1">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108927887689658388/3026330-106_DEFAULT.png?width=783&height=587" class="prodImg" alt="jordan">
+        <h3>Under Armour Blur Smoke</h3>
+        <div class="price">Php 8100</div>
+        <button onclick="addToCart(3)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-2"><br><br>
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108938754061783130/image.png?width=733&height=457" class="prodImg" alt="">
+        <h3>Nike BAPE</h3>
+        <div class="price">Php 3500</div>
+        <button onclick="addToCart(4)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-3"><br><br><br>
+       <img src="https://media.discordapp.net/attachments/882095196840525897/1108929695833133076/image.png?width=753&height=441" class="prodImg" alt="">
+        <h3>Adidas Adizero Wakanda</h3>
+        <div class="price">Php 9999</div>
+        <button onclick="addToCart(5)">Add to cart</button>
+     </div>
+    </div>
+    <br><br>
+    
+    <h1>Football Jerseys</h1>
+      <div class="products-container">
+
+      <div class="product" data-name="p-4">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108810239488303225/download-28.png?width=618&height=618" class="prodImg" alt="">
+         <h3>Messi Jersey</h3>
+         <div class="price">Php 1800</div>
+         <button onclick="addToCart(6)">Add to cart</button>
+      </div>
+
+      <div class="product" data-name="p-5">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108810112979701861/360a323ba4829e7ba48b5efa827373d7.png?width=618&height=618" class="prodImg" alt="">
+         <h3>Philippine Azkals Jersey</h3>
+         <div class="price">Php 1700</div>
+         <button onclick="addToCart(7)">Add to cart</button>
+      </div>
+
+      <div class="product" data-name="p-6">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108810329502253157/ronaldoaway_9c2e6f20-f9c4-47bd-9441-958353d9ceed_1024x1024.png?width=618&height=618" class="prodImg" alt="">
+         <h3>Ronaldo Jersey</h3>
+         <div class="price">Php 1800</div>
+         <button onclick="addToCart(8)">Add to cart</button>
+      </div>
+      <div class="product" data-name="p-4">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108930499193356360/download-17.png?width=587&height=587" class="prodImg" alt="">
+         <h3>Ibrahimovic Jersey</h3>
+         <div class="price">Php 1800</div>
+         <button onclick="addToCart(9)">Add to cart</button>
+      </div>
+
+      <div class="product" data-name="p-5">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108930962886234162/88c12bdacf5c776a61738b56ad94901f.png?width=587&height=587" class="prodImg" alt="">
+         <h3>Pele Jersey</h3>
+         <div class="price">Php 1700</div>
+         <button onclick="addToCart(10)">Add to cart</button>
+      </div>
+
+      <div class="product" data-name="p-6">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108931349542359070/download-34.png?width=587&height=587" class="prodImg" alt="">
+         <h3>Maradona Jersey</h3>
+         <div class="price">Php 1800</div>
+         <button onclick="addToCart(11)">Add to cart</button>
+      </div>
+    </div><br><br>
+    <h1>Football Pants</h1>
+    <div class="products-container">
+      <div class="product" data-name="p-4">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108810951626596392/individualFINAL-Training-Men27s-Soccer-Pants.png?width=618&height=618" class="prodImg" alt="">
+        <br><br><br><br><br>
+        <h3>Puma Pants</h3>
+        <div class="price">Php 2500</div>
+        <button onclick="addToCart(12)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-5">
+        <img src="https://images-ext-1.discordapp.net/external/5TO90XRDmVa_GG0lbG21eZROGMBLaHzDv52oN6zVAIo/https/assets.adidas.com/images/w_383%2Ch_383%2Cf_auto%2Cq_auto%2Cfl_lossy%2Cc_fill%2Cg_auto/b4a23415f9c84b04bbeeaf62012889ab_9366/tiro-pants.jpg?width=478&height=478" class="prodImg" alt="">
+        <br><br><br><br><br>
+        <h3>Adidas Pants</h3>
+        <div class="price">Php 2500</div>
+        <button onclick="addToCart(13)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-6">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108855209872076932/11550280_fpx.png?width=506&height=618" class="prodImg" alt="">
+        <h3>Nike Pants</h3>
+        <div class="price">Php 2500</div>
+        <button onclick="addToCart(14)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-4">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108932269286105119/ec4782ee-4f8d-457c-b1fb-44ffcf425983.png?width=587&height=587" class="prodImg" alt="">
+        <br><br>
+        <h3>Under Armour Pants</h3>
+        <div class="price">Php 2500</div>
+        <button onclick="addToCart(15)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-5">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108933245816549476/GJ0633_F_Model_eCom_1.png?width=587&height=587" class="prodImg" alt="">
+        <br><br>
+        <h3>Reebok Pants</h3>
+        <div class="price">Php 2500</div>
+        <button onclick="addToCart(16)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-6">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108933679083962489/umbro_totaltrainingtaperedpant_1657639652UMJM0652_090_3.png?width=587&height=587" class="prodImg" alt="">
+        <h3>Umbro Pants</h3>
+        <div class="price">Php 2500</div>
+        <button onclick="addToCart(17)">Add to cart</button>
+     </div>
+
+   </div><br><br>
+   <h1>World Cup Balls</h1>
+    <div class="products-container">
+      <div class="product" data-name="p-4">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108935357883498606/615xwIblEAL.png?width=587&height=587" class="prodImg" alt="">
+        <br><br><br><br><br>
+        <h3>2022</h3>
+        <div class="price">Php 6900</div>
+        <button onclick="addToCart(18)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-5">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108934828256133161/telstar18-1528386493.png?width=587&height=587" class="prodImg" alt="">
+        <br><br><br><br><br>
+        <h3>2018</h3>
+        <div class="price">Php 5200</div>
+        <button onclick="addToCart(19)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-6">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108935933312638986/PhMEDGHjLWIL2UwIFboMTwnPG4U.png?width=693&height=587" class="prodImg" alt=""><br><br><br><br><br><br><br><br>
+        <h3>2014</h3>
+        <div class="price">Php 5800</div>
+        <button onclick="addToCart(20)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-4">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108936132386897930/s-l400.png?width=495&height=500" class="prodImg" alt="">
+        <br><br><br><br><br>
+        <h3>2010</h3>
+        <div class="price">Php 7000</div>
+        <button onclick="addToCart(21)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-5">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108945187411079168/263670_0.png?width=587&height=587" class="prodImg" alt="">
+        <br><br><br><br><br>
+        <h3>2006</h3>
+        <div class="price">Php 4500</div>
+        <button onclick="addToCart(22)">Add to cart</button>
+     </div>
+
+     <div class="product" data-name="p-6">
+        <img src="https://media.discordapp.net/attachments/882095196840525897/1108937038545297408/image_fc92cac5-70d4-4f0e-85e1-a2d766641827.png?width=588&height=587" class="prodImg" alt=""><br><br><br><br><br>
+        <h3>2002</h3>
+        <div class="price">Php 4100</div>
+        <button onclick="addToCart(23)">Add to cart</button>
+     </div>
+
+   </div>
+
+</div>
+
+<div id="cartt">
+<table class="text-center mx-auto col-sm-8">
+  <thead>
+      <tr>
+          <th scope="col">Remove</th>
+          <th scope="col">Item</th>
+          <th scope="col">Price</th>
+      </tr>
+  </thead>
+  <tbody id="cart-table">
+  </tbody>
+</table>
+<p id="total-text">Total: Php 0.00</p>
+</div>
+
+<div class="mt-3 col-sm-3 text-center mx-auto">
+    <div class="row">
+<div class="box text-start">
+            <form action="http://sirjm.infinityfreeapp.com/checkout.php" method ="get">
+                Customer Name: <input type="text" name="cust_name" placeholder="Customer Name" class="form-control"><br>
+                Customer Address: <input type="text" name="cust_addr" class="form-control" placeholder="Customer Address"><br>
+                Customer Email: <input type="text" name="cust_email" class="form-control" placeholder="Customer Address"><br>
+                <input type="hidden" id="cust_order" name="cust_order">
+                <input type="submit" value="Submit" id="submitForm">
+        
+            </form>
+        </div>
+    </div>
+</div>
+<footer class="bg-transparent text-center text-white mt-3">
+    <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.4);">
+        <div class="col-auto">
+            <p class="pt-2 ">Cooked by: David, Fetalvero, Yumul [9-Balingkilat]
+            </p>
+            © Copyright: 2023 PSHS-CLC
+          </div>
+    </div>
+  </footer>
+<script>
+
+  var menu = [
+      {
+          prod_name: "Nike Air Jordan 1",
+          prod_price: 8100
+      },
+      {
+          prod_name: "Nike Vapor Edge",
+          prod_price: 3500
+      },
+      {
+          prod_name: "Under Armour Spotlight",
+          prod_price: 9999
+      },
+      {
+          prod_name: "Under Armour Blur Smoke",
+          prod_price: 8100
+      },
+      {
+          prod_name: "Nike BAPE",
+          prod_price: 3500
+      },
+      {
+          prod_name: "Adidas Adizero Wakanda",
+          prod_price: 9999
+      },
+      {
+          prod_name: "Messi Jersey",
+          prod_price: 1800
+      },
+      {
+          prod_name: "Philippine Azkals Jersey",
+          prod_price: 1700
+      },
+      {
+          prod_name: "Ronaldo Jersey",
+          prod_price: 1800
+      },
+      {
+          prod_name: "Ibrahimovic Jersey",
+          prod_price: 1800
+      },
+      {
+          prod_name: "Pele Jersey",
+          prod_price: 1700
+      },
+      {
+          prod_name: "Maradona Jersey",
+          prod_price: 1800
+      },
+      {
+          prod_name: "Puma Pants",
+          prod_price: 2500
+      },
+      {
+          prod_name: "Adidas Pants",
+          prod_price: 2500
+      },
+      {
+          prod_name: "Nike Pants",
+          prod_price: 2500
+      },
+      {
+          prod_name: "Under Armour Pants",
+          prod_price: 2500
+      },
+      {
+          prod_name: "Reebok Pants",
+          prod_price: 2500
+      },
+      {
+          prod_name: "Umbro Pants",
+          prod_price: 2500
+      },
+      {
+          prod_name: "2022 Ball",
+          prod_price: 6900
+      },
+      {
+          prod_name: "2018 Ball",
+          prod_price: 5200
+      },
+      {
+          prod_name: "2014 Ball",
+          prod_price: 5800
+      },
+      {
+          prod_name: "2010 Ball",
+          prod_price: 7000
+      },
+      {
+          prod_name: "2006 Ball",
+          prod_price: 4500
+      },
+      {
+          prod_name: "2002 Ball",
+          prod_price: 4100
+      }
+
+  ]
+  var cart = []
+
+  function displayCart() {
+      var table = document.getElementById("cart-table")
+      var total = 0;
+      table.innerHTML = ""
+
+      for (var i = 0; i < cart.length; i++) {
+          var row = table.insertRow(i)
+          var remove = row.insertCell(0)
+          var name = row.insertCell(1)
+          var price = row.insertCell(2)
+
+          remove.innerHTML = `<button onclick="removeFromCart(${i})">Remove</button>`
+          name.innerHTML = cart[i].prod_name
+          price.innerHTML = cart[i].prod_price
+
+          total = total + cart[i].prod_price
+      }
+      var totalText = document.getElementById("total-text")
+      totalText.innerHTML = `Total: Php ${total}.00`
+  }
+
+  function removeFromCart(i) {
+      cart.splice(i, 1)
+      displayCart()
+  }
+
+  function addToCart(i) {
+      cart.push(menu[i])
+      displayCart()
+      myJSON = JSON.stringify(cart); 
+    document.getElementById("cust_order").value=myJSON
+    console.log(cart)
+  }
+
+  function removeAll() {
+      cart = []
+      displayCart()
+  }
+</script>
+</body>
+</html>
